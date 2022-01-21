@@ -29,7 +29,6 @@ textarea {
 }
 .button {
   font-size: 1rem;
-  text-transform: uppercase;
   letter-spacing: 0.09rem;
   line-height: 3.8rem;
   padding: 0 2rem;
@@ -57,19 +56,18 @@ textarea {
   text-align: center;
 }
 h1 {
-  text-transform: uppercase;
+
   text-align: center;
   font-size: 2.8rem;
 }
 h2 {
-  text-transform: uppercase;
+
   text-align: center;
   font-size: 2.3rem;
   padding: 0;
   margin: 0;
 }
 h3 {
-  text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;
   padding: 0;
@@ -93,6 +91,20 @@ h3 {
 .post-container p {
   font-size: 1.6rem;
 }
+
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: hidden;
+  position: fixed;
+  background-size: cover;
+}
+
+
 @media screen and (max-width: 1000px) {
   .post-container {
     width: 40%;
@@ -108,6 +120,8 @@ h3 {
     padding: 0.9rem 0.1rem;
   }
 }
+
+
 @media screen and (max-width: 800px) {
   .post-container {
     width: 85%;
