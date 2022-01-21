@@ -1,9 +1,11 @@
 import React from "react";
 import DisplayAllPosts from './Components/DisplayAllPosts'
+import HydraCanvas from "./Components/Hydra";
 const App = ( ) => {
   return (
     <div>
-      <DisplayAllPosts />
+      {/* <DisplayAllPosts /> */}
+      <HydraCanvas/>
     </div>
   );
 };
