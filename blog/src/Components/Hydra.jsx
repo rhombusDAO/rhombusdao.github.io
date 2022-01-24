@@ -10,7 +10,7 @@ const HydraCanvas = () =>  {
                 canvas: document.querySelector('#myCanvas')
              });
 
-
+             setResolution(1080,1080)
              setFunction({
                 name: 'rhombify',
                 type: 'coord',
@@ -29,11 +29,16 @@ const HydraCanvas = () =>  {
               return xy;`
               })
              //returns an error, but still works
-             src(o0).blend(osc(10, 0.05, 1), 0.05)
-             .mask(shape(4, 0.6).scale(1, 0.8).rhombify(0.25))
-             .modulate(noise(8, 0.01), 0.001)
-             .out(o0)
-             render(o0)
+  // jan 24
+                // jan 24
+let mod = () => Math.sin(time/10)*Math.sin(time/15)*3 + 5
+osc(mod, 0, 1)
+  .modulate(noise(6,2 ))
+  .modulatePixelate(gradient(), 0.3, 2)
+  .blend(src(o0).luma(0.4).scale(0.8), 0.2)
+  .brightness(0.2)
+  .rhombify()
+  .out()
 
 
             console.log('mounted');
