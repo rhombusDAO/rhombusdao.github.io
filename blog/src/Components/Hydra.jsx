@@ -7,11 +7,12 @@ const HydraCanvas = () =>  {
 
             const hydra = new Hydra({ 
                 detectAudio: false,
-                canvas: document.querySelector('#myCanvas')
-             });
+                canvas: document.querySelector('#myCanvas'),
+                makeGlobel: false 
+             }).synth
 
-             setResolution(1080,1080)
-             setFunction({
+             hydra.setResolution(1080,1080)
+             hydra.setFunction({
                 name: 'rhombify',
                 type: 'coord',
                 inputs: [
@@ -31,11 +32,11 @@ const HydraCanvas = () =>  {
              //returns an error, but still works
   // jan 24
                 // jan 24
-let mod = () => Math.sin(time/10)*Math.sin(time/15)*3 + 5
-osc(mod, 0, 1)
-  .modulate(noise(6,2 ))
-  .modulatePixelate(gradient(), 0.3, 2)
-  .blend(src(o0).luma(0.4).scale(0.8), 0.2)
+let mod = () => Math.sin(hydra.time/10)*Math.sin(hydra.time/15)*3 + 5
+hydra.osc(mod, 0, 1)
+  .modulate(hydra.noise(6,2 ))
+  .modulatePixelate(hydra.gradient(), 0.3, 2)
+  .blend(hydra.src(hydra.o0).luma(0.4).scale(0.8), 0.2)
   .brightness(0.2)
   .rhombify()
   .out()
